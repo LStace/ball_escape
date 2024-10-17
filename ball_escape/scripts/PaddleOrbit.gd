@@ -4,13 +4,12 @@ extends Node2D
 @onready var collision_polygon = collider.get_polygon()
 
 var mouse_pos
-var pi_denom = 15.0
+var pi_denom = 13.0
 var arc_width = 10.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	calculate_collision_shape()
-	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -30,11 +29,6 @@ func calculate_collision_shape():
 		var coord = get_point_on_arc(360 / pi_denom / (i + 1))
 		collision_polygon[i] = coord - Vector2(arc_width / 2, 0)
 		collision_polygon[8 - i] = coord * Vector2(1, -1) - Vector2(arc_width / 2, 0)
-	
-	for i in collision_polygon:
-		print(i)
-	
-	print(collision_polygon)
 
 #calculate the coordinates on the arc
 func get_point_on_arc(angle):
