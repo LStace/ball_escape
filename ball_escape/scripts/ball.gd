@@ -15,7 +15,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	queue_redraw()
 
 
 func _physics_process(delta):
@@ -23,6 +23,8 @@ func _physics_process(delta):
 	velocity = movement * BASE_SPEED * speed_multiplier
 	move_and_slide()
 
+func _draw():
+	draw_circle(Vector2(0, 0), 10.0, Color.WHITE)
 
 func _on_body_entered(body):
 	#change ball movement when it collides with the paddle

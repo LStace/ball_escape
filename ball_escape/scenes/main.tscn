@@ -10,6 +10,7 @@ size = Vector2(950, 950)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_fw1q3")
+metadata/_edit_horizontal_guides_ = [-203.0]
 
 [node name="Ball" parent="." instance=ExtResource("1_i6fym")]
 script = ExtResource("2_ocgju")
