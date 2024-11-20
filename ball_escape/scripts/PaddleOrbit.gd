@@ -40,3 +40,7 @@ func get_point_on_arc(angle):
 	# coordinates are local to the paddle, so take away to calculate distance from the paddle centre, not the circle center
 	return Vector2((radius - height) * -1, chord/2)
 	
+
+
+func _on_paddle_body_entered(body):
+	body.bounce()
