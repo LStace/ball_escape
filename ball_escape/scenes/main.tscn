@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cljl7cq2ykvnx"]
+[gd_scene load_steps=12 format=3 uid="uid://cljl7cq2ykvnx"]
 
 [ext_resource type="Script" path="res://scripts/gameManager.gd" id="1_fw1q3"]
 [ext_resource type="FontFile" uid="uid://dyyjely0kfx5n" path="res://assets/fonts/Silkscreen/Silkscreen-Bold.ttf" id="2_fku7e"]
 [ext_resource type="Script" path="res://scripts/PaddleOrbit.gd" id="2_ibtoi"]
 [ext_resource type="FontFile" uid="uid://d2pixw33wvgyf" path="res://assets/fonts/Silkscreen/Silkscreen-Regular.ttf" id="3_1sh0x"]
+[ext_resource type="AudioStream" uid="uid://d1wj5veu2p0ks" path="res://assets/sound_effects/one_beep-99630.mp3" id="5_xg60j"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pptn3"]
 font = ExtResource("2_fku7e")
@@ -138,6 +139,9 @@ text = "0"
 label_settings = SubResource("LabelSettings_a6eg5")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="BounceSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_xg60j")
 
 [connection signal="body_entered" from="PaddleOrbit/Paddle" to="PaddleOrbit" method="_on_paddle_body_entered"]
 [connection signal="body_exited" from="Boundary" to="." method="_on_boundary_body_exited"]

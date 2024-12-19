@@ -35,6 +35,7 @@ func on_ball_bounced(ballBounces):
 	#increases the score based on how many times the ball has bounced. 
 	score += ballBounces
 	score_label.text = "%d" % score
+	$BounceSound.play()
 
 
 #creates a ball every time a ball hits ten bounces
